@@ -1,0 +1,52 @@
+---
+title: "Developing Data Products - Course Project"
+author: mdpesheva
+output: ioslides_presentation
+date: "2025-06-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+This presentation is the Course Project of the Developing Data Products Coursera course.
+
+It is an R Presentation generated with RStudio.
+
+The Shiny application is available at https://mdpesheva.shinyapps.io/myapp_height/
+
+The Shiny app source code is available at https://github.com/mdpesheva/Developing_Data_Products_Course_Project
+
+## Overview
+The application is written in Shiny, a web application framework for R.
+The source code consists of two files: 
+
+- server.R: includes the backend of a Shiny web application
+- ui.R: includes the the user-interface elements
+
+The application is hosted on shinyapps.io.
+The application goal is to provide an interface to calculate the expected adult height of a child
+
+## How the App works?
+Enter family information:
+
+- enter height of father in cm
+- enter height of mother in cm
+- enter sex of child of interest
+
+Output:
+
+- the expected height of the child as an adult following a standardized formula
+
+## Example:
+
+```{r simple_code, echo = TRUE}
+sex='male'; height_f=180; height_m=165
+if(sex=="male"){
+    height_c <- (height_m + height_f)/2 + 6.5
+} else {
+    height_c <- (height_m + height_f)/2 - 6.5
+}
+height_c        
+```        
